@@ -37,7 +37,7 @@ public class DetalleVentasController {
 		return detalleventasService.delete(id);
 	}
 	
-	@PostMapping("/cobrar")
+	@PostMapping("/dventas")
 	public int create(@RequestBody DetalleVentas dv) {
 		return detalleventasService.create(dv);
 	}

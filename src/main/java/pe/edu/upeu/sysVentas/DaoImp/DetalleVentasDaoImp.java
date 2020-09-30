@@ -29,7 +29,7 @@ public class DetalleVentasDaoImp implements DetalleVentasDao{
 	@Override
 	public int updtae(DetalleVentas dv) {
 		// TODO Auto-generated method stub
-		String SQL = "update detalle_ventas set precio = ?, cantidad=?, subtotal=?, idventas"+
+		String SQL = "update detalle_ventas set precio = ?, cantidad=?, subtotal=?, idventas =?,"+
 						"idproducto=? where iddetalle_ventas=?";
 		
 		return jdbcTemplate.update(SQL,dv.getPrecio(), dv.getCantidad(), dv.getSubtotal(),
