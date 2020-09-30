@@ -5,45 +5,46 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import pe.edu.upeu.sysVentas.dao.RolDao;
 import pe.edu.upeu.sysVentas.entity.Rol;
 import pe.edu.upeu.sysVentas.service.RolService;
 
-@Repository
-public class RolServiceImp implements RolService {
 
-	@Autowired
-	private RolDao roldao;
+@Service
+public class RolServiceImp implements RolService{
 	
-	@Override
-	public int create(Rol r) {
+	@Autowired
+	private RolDao rolDao;
+
+		@Override
+		public int create(Rol r) {
 		// TODO Auto-generated method stub
-		return roldao.create(r);
+		return rolDao.create(r);
 	}
 
 	@Override
 	public int update(Rol r) {
 		// TODO Auto-generated method stub
-		return roldao.update(r);
+		return rolDao.update(r);
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		return roldao.delete(id);
+		return rolDao.delete(id);
 	}
 
 	@Override
 	public Rol read(int id) {
 		// TODO Auto-generated method stub
-		return roldao.read(id);
+		return rolDao.read(id);
 	}
 
 	@Override
 	public List<Map<String, Object>> readAll() {
 		// TODO Auto-generated method stub
-		return roldao.readAll();
+		return rolDao.readAll();
 	}
-
 }

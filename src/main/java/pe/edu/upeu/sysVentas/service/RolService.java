@@ -11,5 +11,5 @@ public interface RolService {
 	int update(Rol r);
 	int delete(int id);
 	Rol read(int id);
-	List<Map<String, Object>>readAll();
+	List<Map<String, Object>> readAll();
 }

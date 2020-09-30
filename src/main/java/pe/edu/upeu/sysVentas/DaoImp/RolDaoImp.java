@@ -12,32 +12,28 @@ import pe.edu.upeu.sysVentas.dao.RolDao;
 import pe.edu.upeu.sysVentas.entity.Rol;
 
 @Repository
-
-public class RolDaoImp implements RolDao {
-
-	@Autowired
-	private JdbcTemplate jdbcTemplate;
-	
+public class RolDaoImp implements RolDao{
+@Autowired
+private JdbcTemplate jdbcTemplate;
 	@Override
 	public int create(Rol r) {
 		// TODO Auto-generated method stub
-		String SQL = "insert into rol(nomrol)values(?)";
+		String SQL = "insert into rol (nomrol) values(?)";
 		return jdbcTemplate.update(SQL,r.getNomrol());
 	}
 
 	@Override
 	public int update(Rol r) {
 		// TODO Auto-generated method stub
-		String SQL = "update rol set nomrol=? where idrol=?";
-		
-		return jdbcTemplate.update(SQL, r.getNomrol(), r.getIdrol());
+		System.out.println(r.getIdrol()+" / "+r.getNomrol());
+		String SQL ="update rol set nomrol=? where idrol=?";
+		return jdbcTemplate.update(SQL, r.getNomrol(),r.getIdrol());
 	}
 
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
 		String SQL = "delete from rol where idrol=?";
-		
 		return jdbcTemplate.update(SQL,id);
 	}
 
@@ -46,7 +42,7 @@ public class RolDaoImp implements RolDao {
 		// TODO Auto-generated method stub
 		String SQL = "select *from rol where idrol=?";
 		return jdbcTemplate.queryForObject(SQL, new Object[] {id}, new BeanPropertyRowMapper<Rol>(Rol.class));
-	}
+}
 
 	@Override
 	public List<Map<String, Object>> readAll() {
