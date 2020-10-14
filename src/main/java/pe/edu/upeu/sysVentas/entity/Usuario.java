@@ -3,6 +3,7 @@ package pe.edu.upeu.sysVentas.entity;
 public class Usuario {
 	
 	private int idusuario;
+	private int idpersona;
 	private String nomuser;
 	private String clave;
 	private String estado;
@@ -20,6 +21,24 @@ public class Usuario {
 		this.clave = clave;
 		this.estado = estado;
 		this.idrol = idrol;
+	}
+
+	public Usuario(int idusuario, int idpersona, String nomuser, String clave, String estado, int idrol) {
+		super();
+		this.idusuario = idusuario;
+		this.idpersona = idpersona;
+		this.nomuser = nomuser;
+		this.clave = clave;
+		this.estado = estado;
+		this.idrol = idrol;
+	}
+
+	public int getIdpersona() {
+		return idpersona;
+	}
+
+	public void setIdpersona(int idpersona) {
+		this.idpersona = idpersona;
 	}
 
 	public int getIdusuario() {

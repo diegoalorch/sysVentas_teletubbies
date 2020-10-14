@@ -33,7 +33,7 @@ private JdbcTemplate jdbcTemplate;
 	@Override
 	public int delete(int id) {
 		// TODO Auto-generated method stub
-		String SQL = "delete from rol where idrol=?";
+		String SQL = "delete *from rol where idrol=?";
 		return jdbcTemplate.update(SQL,id);
 	}
 
